@@ -1,0 +1,126 @@
+/* Consideraciones generales */
+
+body {
+    background-color: {{ color }};
+    font-size: {{ tam }}px;
+}
+
+div {
+    overflow: auto;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background-color: grey;
+}
+
+/* Clases */
+
+.boton {
+    border: 1px solid #2e518b;
+    padding: 10px;
+    background-color: #2e518b;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 10px;
+}
+
+.aparcamientos {
+    float: left;
+    width: 75%;
+    background-color: LightSteelBlue;
+    border: 1px solid DarkBlue;
+    margin: 10px;
+    padding: 5px;
+}
+
+.right_column {
+    float: right;
+    width: 20%;
+}
+
+/* base */
+
+#container {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 0 10px 10px;
+}
+
+#banner {
+    float:left;
+    width: 800px;
+    height: 120px;
+    padding: 10px;
+}
+
+#user_login {
+    float: right;
+    width: 200px;
+    height: 120px;
+    padding-top: 10px;
+}
+
+#user_login input {
+    padding: 3px 0;
+}
+
+#barra {
+    background: AliceBlue;
+    width: 1020px;
+    height: 50px;
+    border: 1px solid #DFEEF7;
+}
+
+#barra a{
+    padding: 0 20px;
+    border-right: 1px solid #AFBEC7;
+    font: bold 1.2em sans-serif;
+    line-height: 50px;
+    color: #456;
+    text-decoration: none;
+}
+
+#content a {
+    text-decoration: none;
+    font: bold 1.1em sans-serif;
+}
+
+#footer {
+
+}
+
+/* index */
+
+#users_list {
+    float: right;
+}
+
+/* aparcamientos */
+
+/* aparc_id */
+
+#seleccion {
+    float: right;
+}
+
+/* user */
+
+#user_form {
+    float: right;
+}
+
+#cambio_pagina {
+    margin: 10px;
+}
+
+#cambio_pagina #siguiente {
+    float: right;
+}
+
+#cambio_pagina #anterior {
+    float: left;
+}

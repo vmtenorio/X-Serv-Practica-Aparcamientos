@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="aparcamientos">
+        <h1>{{ aparcamiento.nombre }}</h1>
+        <h4>Descripcion</h4>
+        <p>{{ aparcamiento.descripcion }}</p>
+        <h4>Ubicación:</h4>
+        <p>Direccion: {{ aparcamiento.direccion }}</p>
+        <p>Barrio: {{ aparcamiento.barrio }}</p>
+        <p>Distrito: {{ aparcamiento.distrito }}</p>
+        <p>Latitud: {{ aparcamiento.latitud }}</p>
+        <p>Longitud: {{ aparcamiento.longitud }}</p>
+        </br><h4>Contacto</h4>
+        <p>{{ aparcamiento.contacto }}</p>
+        </br><h4>Página</h4>
+        <a href="{{ aparcamiento.url }}">Página web</a>
+        <h4>Comentarios del aparcamiento</h4>
+        {% for coment in coment_list %}
+            <p>{{ coment.texto }}</p>
+            <hr>
+        {% endfor %}
+        {% if aut %}
+            <form method="POST">
+                <input type="text" name="comentario" placeholder="Escribe tu comentario">
+                <input class="boton" type="submit" value="Enviar">
+            </form>
+        {% endif %}
+    </div>
+    <div id="seleccion">
+        <form method="POST">
+            <input class="boton" type="submit" value="Seleccionar">
+        </form>
+    </div>
+{% endblock %}

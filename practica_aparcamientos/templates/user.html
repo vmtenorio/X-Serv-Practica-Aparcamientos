@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="user">
+        <h1> Página de {{ name }}</h1>
+        <div class="aparcamientos">
+            <h2>Sus aparcamientos seleccionados son</h2>
+            {% for s in selecciones %}
+                <a href="aparcamientos/{{ s.aparcamiento.id }}">{{ s.aparcamiento.nombre }}</a></br>
+                <p> Direccion: {{ s.aparcamiento.direccion }}</p>
+                <a href="aparcamientos/{{ s.aparcamiento.id }}">Mas informacion</a></br>
+                <p>Fecha de seleccion: {{ s.fecha }}</p>
+                <hr>
+            {% endfor %}
+            <div id="cambio_pagina">
+                {% if not ultima %}
+                    <a class="boton" id="siguiente" href="{{ name }}?pag={{ pag_sig }}">Pagina siguiente</a>
+                {% endif %}
+                {% if not primera %}
+                    <a class="boton" id="anterior" href="{{ name }}?pag={{ pag_ant }}">Pagina anterior</a>
+                {% endif %}
+            </div>
+        </div>
+        {% if aut %}
+            <div class="right_column">
+                <h3>Cambia el CSS</h3>
+                <form method="post">
+                    <h5>Color de fondo</h5>
+                    <input type="text" name="color_css" value="white">
+                    <h5>Tamaño de letra</h5>
+                    <input type="text" name="tamano_css" value="14">
+                    <h5>Título de tu página</h5>
+                    <input type="text" name="titulo" value="Pagina de {{ name }}">
+                    <input class="boton" type="submit" value="Enviar">
+                </form>
+            </div>
+        {% endif %}
+{% endblock %}

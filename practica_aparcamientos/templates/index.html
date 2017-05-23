@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="index_content">
+        <div class="aparcamientos">
+            <h3>Aparcamientos con más comentarios</h3>
+        {% for aparcamiento in aparcamientos %}
+            <a href="aparcamientos/{{ aparcamiento.id }}">{{ aparcamiento.nombre }}</a></br>
+            <p> Direccion: {{ aparcamiento.direccion }}</p>
+            <a href="aparcamientos/{{ aparcamiento.id }}">Mas informacion</a></br>
+            <hr>
+        {% endfor %}
+        </div>
+        <div class="right_column">
+            <h3>Lista de usuarios</h3>
+            {{ usuarios|safe }}
+        </div>
+        <form method="post">
+            <input class="boton" type="submit" value="Accesibles">
+        </form>
+    </div>
+{% endblock %}
