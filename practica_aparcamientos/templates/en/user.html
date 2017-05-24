@@ -13,10 +13,10 @@
             {% endfor %}
             <div id="cambio_pagina">
                 {% if not ultima %}
-                    <a class="boton" id="siguiente" href="{{ name }}?pag={{ pag_sig }}">Next page</a>
+                    <a class="boton" id="siguiente" href="{{ username }}?pag={{ pag_sig }}">Next page</a>
                 {% endif %}
                 {% if not primera %}
-                    <a class="boton" id="anterior" href="{{ name }}?pag={{ pag_ant }}">Previous page</a>
+                    <a class="boton" id="anterior" href="{{ username }}?pag={{ pag_ant }}">Previous page</a>
                 {% endif %}
             </div>
         </section>
