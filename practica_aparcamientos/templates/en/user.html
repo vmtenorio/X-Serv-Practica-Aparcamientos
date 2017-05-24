@@ -1,0 +1,42 @@
+{% extends "en/base.html" %}
+{% block content %}
+    {% if found%}
+        <section {% if not my_page %}class="all_page"{%endif%}>
+            <h1> {{ titulo }} </h1>
+            <h3>Your selected parkings</h3>
+            {% for s in selecciones %}
+                <a href="aparcamientos/{{ s.aparcamiento.id }}">{{ s.aparcamiento.nombre }}</a></br>
+                <p> Direction: {{ s.aparcamiento.direccion }}</p>
+                <a href="aparcamientos/{{ s.aparcamiento.id }}">More info</a></br>
+                <p>Selection date: {{ s.fecha }}</p>
+                <hr>
+            {% endfor %}
+            <div id="cambio_pagina">
+                {% if not ultima %}
+                    <a class="boton" id="siguiente" href="{{ name }}?pag={{ pag_sig }}">Next page</a>
+                {% endif %}
+                {% if not primera %}
+                    <a class="boton" id="anterior" href="{{ name }}?pag={{ pag_ant }}">Previous page</a>
+                {% endif %}
+            </div>
+        </section>
+        {% if my_page %}
+            <aside>
+                <h3>Change the CSS</h3>
+                <form method="post">
+                    <h5>Background colour</h5>
+                    <input class="textbox" type="text" name="color_css" value="white">
+                    <h5>Font size</h5>
+                    <input class="textbox" type="text" name="tamano_css" value="14">
+                    <h5>Your page's title</h5>
+                    <input class="textbox" type="text" name="titulo" value="{{ name }}'s page">
+                    <input class="boton" type="submit" value="Send">
+                </form>
+            </aside>
+        {% endif %}
+    {% else %}
+        <section class="all_page">
+            <h1>User {{ username }} does not exist!</h1>
+        </section>
+    {% endif %}
+{% endblock %}

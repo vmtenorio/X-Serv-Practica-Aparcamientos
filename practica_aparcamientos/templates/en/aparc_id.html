@@ -1,0 +1,41 @@
+{% extends "en/base.html" %}
+{% block content %}
+    <section class="all_page">
+        <div id="selec_voto">
+        {% if aut %}
+            <form method="POST">
+                <input class="boton" type="submit" name="seleccion" value="Select">
+            </form>
+        {% endif %}
+            <form method="POST">
+                <p>{{ aparcamiento.votos }}
+                    <input class="boton" type="submit" name="voto" value="+1">
+                </p>
+            </form>
+        </div>
+        <h1>{{ aparcamiento.nombre }}</h1>
+        <h4>Description</h4>
+        <p>{{ aparcamiento.descripcion }}</p>
+        <h4>Location</h4>
+        <p>Address: {{ aparcamiento.direccion }}</p>
+        <p>Neighborhood: {{ aparcamiento.barrio }}</p>
+        <p>District: {{ aparcamiento.distrito }}</p>
+        <p>Latitude: {{ aparcamiento.latitud }}</p>
+        <p>Longitude: {{ aparcamiento.longitud }}</p>
+        </br><h4>Contact</h4>
+        <p>{{ aparcamiento.contacto }}</p>
+        <a href="{{ aparcamiento.url }}">Web Page</a>
+        <br/><br/>
+        <h4>Parking's comments</h4>
+        {% for coment in coment_list %}
+            <p>{{ coment.texto }}</p>
+            <hr>
+        {% endfor %}
+        {% if aut %}
+            <form method="POST">
+                <textarea id="comment_box" wrap="soft" placeholder="Write your comment" name="comentario"></textarea>
+                <input class="boton" type="submit" value="Send">
+            </form>
+        {% endif %}
+    </section>
+{% endblock %}

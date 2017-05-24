@@ -1,6 +1,18 @@
-{% extends "base.html" %}
+{% extends "es/base.html" %}
 {% block content %}
-    <div class="aparcamientos">
+    <section class="all_page">
+        <div id="selec_voto">
+        {% if aut %}
+            <form method="POST">
+                <input class="boton" type="submit" name="seleccion" value="Seleccionar">
+            </form>
+        {% endif %}
+            <form method="POST">
+                <p>{{ aparcamiento.votos }}
+                    <input class="boton" type="submit" name="voto" value="+1">
+                </p>
+            </form>
+        </div>
         <h1>{{ aparcamiento.nombre }}</h1>
         <h4>Descripcion</h4>
         <p>{{ aparcamiento.descripcion }}</p>
@@ -12,8 +24,8 @@
         <p>Longitud: {{ aparcamiento.longitud }}</p>
         </br><h4>Contacto</h4>
         <p>{{ aparcamiento.contacto }}</p>
-        </br><h4>Página</h4>
         <a href="{{ aparcamiento.url }}">Página web</a>
+        <br/><br/>
         <h4>Comentarios del aparcamiento</h4>
         {% for coment in coment_list %}
             <p>{{ coment.texto }}</p>
@@ -21,14 +33,9 @@
         {% endfor %}
         {% if aut %}
             <form method="POST">
-                <input type="text" name="comentario" placeholder="Escribe tu comentario">
+                <textarea id="comment_box" wrap="soft" placeholder="Escribe tu comentario" name="comentario"></textarea>
                 <input class="boton" type="submit" value="Enviar">
             </form>
         {% endif %}
-    </div>
-    <div id="seleccion">
-        <form method="POST">
-            <input class="boton" type="submit" value="Seleccionar">
-        </form>
-    </div>
+    </section>
 {% endblock %}

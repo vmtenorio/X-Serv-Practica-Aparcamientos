@@ -15,6 +15,31 @@ hr {
     background-color: grey;
 }
 
+section {
+    float: left;
+    width: 75%;
+    background-color: LightSteelBlue;
+    border: 1px solid DarkBlue;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+section.all_page {
+    width: 98%;
+}
+
+aside {
+    float: right;
+    width: 20%;
+    background-color: LightSkyBlue;
+    border: 1px solid DarkBlue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
 /* Clases */
 
 .boton {
@@ -28,26 +53,24 @@ hr {
     border-radius: 10px;
 }
 
-.aparcamientos {
-    float: left;
-    width: 75%;
-    background-color: LightSteelBlue;
-    border: 1px solid DarkBlue;
-    margin: 10px;
-    padding: 5px;
-}
-
-.right_column {
-    float: right;
-    width: 20%;
+.textbox {
+    border: 1px solid LightGray;
+    border-radius: 5px;
+    margin: 5px;
+    height: 30px;
 }
 
 /* base */
 
 #container {
-    width: 1020px;
+    width: 1050px;
     margin: 0 auto;
     padding: 0 10px 10px;
+}
+
+header {
+    width: 1050px;
+    height: 150px;
 }
 
 #banner {
@@ -55,29 +78,44 @@ hr {
     width: 800px;
     height: 120px;
     padding: 10px;
+    margin-top: 5px;
 }
 
 #user_login {
     float: right;
-    width: 200px;
+    width: 220px;
     height: 120px;
-    padding-top: 10px;
+    background-color: LightSkyBlue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid DarkBlue;
+    border-radius: 10px;
+    padding:4px;
 }
 
 #user_login input {
-    padding: 3px 0;
+    margin: 2px;
+    float: right;
 }
 
-#barra {
+#user_login a {
+    margin: 2px;
+    float: right;
+    padding: 10px;
+    height: 20px;
+}
+
+nav {
     background: AliceBlue;
-    width: 1020px;
+    width: 1050px;
     height: 50px;
-    border: 1px solid #DFEEF7;
+    border: 1px solid LightBlue;
+    border-radius: 10px;
 }
 
-#barra a{
+nav a{
     padding: 0 20px;
-    border-right: 1px solid #AFBEC7;
+    border-right: 1px solid LightBlue;
     font: bold 1.2em sans-serif;
     line-height: 50px;
     color: #456;
@@ -89,22 +127,76 @@ hr {
     font: bold 1.1em sans-serif;
 }
 
-#footer {
+#hard_hr {
+    border: 0 ;
+    border-top: 4px double blue;
+    width: 90%;
+}
 
+footer {
+    background-color: AliceBlue;
+    width: 1030px;
+    border: 1px solid LightBlue;
+    border-radius: 10px;
+    font: bold 1.2em sans-serif;
+    color: #456;
+    padding: 10px;
 }
 
 /* index */
 
-#users_list {
-    float: right;
+#accesibles {
+    float:right;
 }
 
 /* aparcamientos */
 
+#distrito {
+    background-color: white;
+    width: 200px;
+    height: 30px;
+    border: 1px solid LightGrey;
+    border-radius: 10px;
+    margin:10px;
+}
+
+#distrito:hover {
+    cursor: pointer;
+}
+
+#text_distrito {
+    text-align: center;
+    vertical-align: middle;
+    font: italic 0.9em Grey;
+}
+
+#distrito #subseccion {
+    position: absolute;
+    top: 268px;
+    left: 171px;
+    background-color: white;
+    height: 300px;
+    width: 200px;
+    display: none;
+}
+
+#distrito #subseccion li {
+    padding: 5px;
+}
+
 /* aparc_id */
 
-#seleccion {
+#selec_voto {
     float: right;
+}
+
+#comment_box {
+    width: 94%;
+    height: 100px;
+    border: 1px solid LightGrey;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
 }
 
 /* user */
@@ -123,4 +215,12 @@ hr {
 
 #cambio_pagina #anterior {
     float: left;
+}
+
+/* about */
+
+#about {
+    font: 1.3em Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    padding: 5px;
 }

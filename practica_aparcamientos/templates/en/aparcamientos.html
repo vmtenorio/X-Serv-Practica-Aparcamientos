@@ -1,0 +1,34 @@
+{% extends "en/base.html" %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        function change_visibility() {
+            if (document.getElementById("subseccion").style.display == "block"){
+                document.getElementById("subseccion").style.display="none"
+            } else {
+                document.getElementById("subseccion").style.display="block"
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <section class="all_page">
+        <div id="distrito" onclick="change_visibility()">
+            <p id="text_distrito">Choose a district</p>
+            <ul>
+                <div id="subseccion">
+                    <li><a href="aparcamientos">ALL</a></li>
+                {% for distrito in distritos %}
+                    <li><a href="aparcamientos?distrito={{ distrito }}">{{ distrito }}</li>
+                {% endfor %}
+                </div>
+            </ul>
+        </div>
+        </br></br>
+        {% for aparcamiento in aparcamientos %}
+            <a href="aparcamientos/{{ aparcamiento.id }}">{{ aparcamiento.nombre }}</a></br>
+            <hr>
+        {% endfor %}
+    </section>
+{% endblock %}

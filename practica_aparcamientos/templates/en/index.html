@@ -1,0 +1,19 @@
+{% extends "en/base.html" %}
+{% block content %}
+    <section>
+        <form id="accesibles" method="post">
+            <input class="boton" type="submit" value="Accessible">
+        </form>
+        <h1>Most commented parkings</h1>
+        {% for aparcamiento in aparcamientos %}
+            <a href="{{ aparcamiento.url }}">{{ aparcamiento.nombre }}</a></br>
+            <p> Direction: {{ aparcamiento.direccion }}</p>
+            <a href="aparcamientos/{{ aparcamiento.id }}">More info</a></br>
+            <hr>
+        {% endfor %}
+    </section>
+    <aside>
+        <h3>User's list</h3>
+        {{ usuarios|safe }}
+    </aside>
+{% endblock %}

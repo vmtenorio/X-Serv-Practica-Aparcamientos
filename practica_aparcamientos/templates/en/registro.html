@@ -1,0 +1,19 @@
+{% extends "en/base.html" %}
+{% block content %}
+    <section class="all_page">
+        {% if created %}
+            <h3>User created!</h3>
+        {% else %}
+            <h3>{{ init_message }}</h3>
+            <form method="post">
+                <h5>Username</h5>
+                <input class="textbox" type="text" name="username" placeholder="Username">
+                <h5>Password</h5>
+                <input class="textbox" type="password" name="password" placeholder="Password">
+                <h5>Repeat the password</h5>
+                <input class="textbox" type="password" name="password2" placeholder="Password">
+                <input class="boton" type="submit" value="Send">
+            </form>
+        {% endif %}
+    </section>
+{% endblock %}

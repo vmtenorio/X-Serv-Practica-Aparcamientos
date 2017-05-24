@@ -17,6 +17,8 @@ class Aparcamiento(models.Model):
     contacto = models.TextField()
     url = models.URLField()
     num_comentarios = models.IntegerField(default=0)
+    #opcional puntos
+    votos = models.IntegerField(default=0)
 
 
 class PagUsuario(models.Model):

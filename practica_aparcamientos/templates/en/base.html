@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    {% load static %}
+    <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+    {% block javascript %}{% endblock %}
+</head>
+
+<body>
+    <div id="container">
+    <header>
+    <div id="banner">
+        <!-- Visto en: https://docs.djangoproject.com/en/1.11/howto/static-files/ -->
+        {% load static %}
+        <img src="{% static "banner_en.jpg" %}" alt="Banner"/>
+    </div>
+    <div id="user_login">
+        {% if aut %}
+            <h3> Welcome {{ name }}</h3>
+            <a class="boton" href="logout">Logout</a>
+        {% else %}
+            <form method="post" action="login">
+                <input class="textbox" type="text" name="username" placeholder="Username">
+                <input class="textbox" type="password" name="password" placeholder="Password">
+                <a class="boton" href="registro">Registrate</a>
+                <input class="boton" type="submit" value="Login">
+            </form>
+        {% endif %}
+    </div>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/aparcamientos">Parkings</a>
+        <a href="/about">About</a>
+    </nav>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <hr id="hard_hr">
+    <footer>
+        <p>This application uses data from the open data portal of the city of Madrid</p>
+        <p> Link to the <a href="http://datos.munimadrid.es/portal/site/egob/menuitem.ac61933d6ee3c31cae77ae7784f1a5a0/?vgnextoid=00149033f2201410VgnVCM100000171f5a0aRCRD&format=xml&file=0&filename=202584-0-aparcamientos-residentes&mgmtid=e84276ac109d3410VgnVCM2000000c205a0aRCRD&preview=full">
+            data
+        </a></p>
+        <p>Link to the <a href="http://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=e84276ac109d3410VgnVCM2000000c205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default">
+            description of the data
+        </a></p>
+    </footer>
+    </div>
+</body>
+</html>

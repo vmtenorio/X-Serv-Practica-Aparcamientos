@@ -1,0 +1,14 @@
+{% extends "es/base.html" %}
+{% block content %}
+    <section class="all_page" id="about">
+        <h1>About</h1>
+        <p>Práctica de Víctor Manuel Tenorio Gómez, del Doble Grado en Ingeniería en Tecnologías de Telecomunicación e Ingeniería Aeroespacial en Aeronavegacion</p>
+        <h3>Funcionamiento</h3>
+        <p>En la página principal (Inicio) aparecen los aparcamientos más comentados. El nombre del aparcamiento es un enlace a su página del ayuntamiento de Madrid, y el enlace Más Información es un enlace a su página en el sitio.</p>
+        <p>Además en la página principal encontramos el botón accesibles, que muestra solo los aparcamientos con accesibilidad 1 en toda la página</p>
+        <p>En la página del aparcamiento es posible votarlo con un +1, y, si eres un usuario registrado, seleccionarlo para tu página</p>
+        <p>En la paǵina de un usuario puedes ver sus aparcamientos seleccionados, y si es tu propia página, puedes cambiar el título y el estilo de tu css.</p>
+        <p>En la página de los aparcamientos puedes ver todos los aparcamientos, con su nombre siendo un enlace a su página en el sitio.</p>
+        <p>Si llamas al recurso /xml o /json, o a /usuario/xml o /usuario/json, podrás obtener los datos de los aparcamientos que aparecen en cada página en formato xml o json, según el recurso invocado</p>
+    </section>
+{% endblock %}
